@@ -9,25 +9,25 @@ Version: 0.0.1
 GitHub Plugin URI: employee451/dependency-module
 */
 
-$dependency_module_enabled = true;
-
 /**
  * Enqueue scripts and styles.
  */
 function dependency_module_scripts() {
   // Font Awesome
-	wp_enqueue_style( 'dependency-module-font-awesome', plugins_url( 'assets/css/font-awesome.min.css' ) );
+	wp_enqueue_style( 'dependency-module-font-awesome', plugins_url( 'assets/css/font-awesome.min.css', __FILE__ ), array(), '4.6.3' );
 
-  // HTML5 shiv
+	// HTML5 Shiv
+	wp_enqueue_script( 'dependency-module-html5-shiv', plugins_url( 'assets/js/ie/html5shiv.js', __FILE__ ), array(), '3.6.2' );
+	wp_script_add_data( 'dependency-module-html5-shiv', 'conditional', 'lte IE 8' );
 
   // Skel
-	wp_enqueue_script( 'dependency-module-skel', plugins_url( 'assets/js/skel.min.js' ), array( 'jquery' ), null, true );
+	wp_enqueue_script( 'dependency-module-skel', plugins_url( 'assets/js/skel.min.js', __FILE__ ), array( 'jquery' ), '3.0.1', true );
 
   // Util
-	wp_enqueue_script( 'dependency-module-util', plugins_url( 'assets/js/util.js' ), array( 'jquery' ), null, true );
+	wp_enqueue_script( 'dependency-module-util', plugins_url( 'assets/js/util.js', __FILE__ ), array( 'jquery' ), null, true );
 
-  // Respond
-
-  // wp_enqueue_script( 'dependency-module-', plugins_url( 'assets/' ), array( 'jquery' ), null, true );
+	// Respond
+	wp_enqueue_script( 'dependency-module-respond', plugins_url( 'assets/js/ie/respond.min.js', __FILE__ ), array(), '1.4.2', true );
+	wp_script_add_data( 'dependency-module-respond', 'conditional', 'lte IE 8' );
 }
 add_action( 'wp_enqueue_scripts', 'dependency_module_scripts' );
