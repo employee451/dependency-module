@@ -5,7 +5,7 @@ Plugin URI: http://github.com/employee451/dependency-module
 Description: This plugin delivers the essential dependencies for Employee 451 Pixelarity themes.
 Author: Employee 451
 Author URI: http://employee451.com/
-Version: 0.0.1
+Version: 1.0
 GitHub Plugin URI: employee451/dependency-module
 */
 
